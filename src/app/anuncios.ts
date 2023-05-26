@@ -1,9 +1,9 @@
 export interface Anuncio{
   id : number;
-  name : string;
-  email: string;
-  location: string;
-  cpf: number;
-  examination: string;
-  commentary: string;
+  title : string;
+  description: string;
+  price: string;
+  date: number;
+  status: string;
+
 }
