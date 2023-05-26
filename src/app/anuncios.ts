@@ -5,5 +5,6 @@ export interface Anuncio{
   price: string;
   date: number;
   status: string;
+  image: string;
 
 }

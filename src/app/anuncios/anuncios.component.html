@@ -3,7 +3,7 @@
   <div class="bg-dark mt-5 container rounded p-5">
     <div class="row">
       <div class="display-6 text-center text-white">
-        <h3 class="text-white mb-4">Cadastro de anuncio</h3>
+        <h3 class="text-white mb-4">Cadastro de anúncio</h3>
         <form [formGroup]="formGroupAnuncio">
 
           <div class="mb-3">
@@ -12,8 +12,8 @@
           </div>
 
           <div class="mb-3">
-            <label for="descriptor" class="form-label">Descrição</label>
-            <input type="text" formControlName="descriptor" class="form-control" id="descriptor" placeholder="Digite a descrição">
+            <label for="description" class="form-label">Descrição</label>
+            <input type="text" formControlName="description" class="form-control" id="description" placeholder="Digite a descrição">
           </div>
 
           <div class="mb-3">
@@ -40,7 +40,10 @@
               Desativo
             </label>
           </div>
-
+          <div class="mb-3">
+            <label for="image" class="form-label">Imagem</label>
+            <input type="text" formControlName="image" class="form-control" id="image" placeholder="Digite imagem">
+          </div>
 
           <div>
             <button class="btn btn-info m-3" (click)="save()">Salvar</button>
@@ -60,6 +63,7 @@
           <th scope="col">Preço</th>
           <th scope="col">Data de validade</th>
           <th scope="col">Status</th>
+          <th scope="col">Imagem</th>
           <th scope="col">Opções</th>
         </tr>
       </thead>
@@ -72,7 +76,9 @@
           <td>
             {{ anuncio.date}}
           </td>
-          <td>{{anuncio.status  | yesNo }}</td>
+          <td>{{anuncio.status}}</td>
+
+          <td>{{anuncio.image}}</td>
           <td>
             <button class="btn btn-warning me-2" (click)="edit(anuncio)">Editar</button>
             <button class="btn btn-danger"  (click)="delete(anuncio)">Deletar</button>

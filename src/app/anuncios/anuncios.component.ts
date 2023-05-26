@@ -30,6 +30,7 @@ export class AnunciosComponent {
       price: [''],
       date: [''],
       status: [''],
+      image: [''],
 
     });
   }
