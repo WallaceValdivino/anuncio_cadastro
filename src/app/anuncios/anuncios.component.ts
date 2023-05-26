@@ -25,13 +25,12 @@ export class AnunciosComponent {
   ) {
     this.formGroupAnuncio = this.formBuilder.group({
       id: [''],
-      name: [''],
-      email: [''],
-      location: [''],
-      cpf: [''],
-      crime: [''],
-      popularity: [''],
-      frequency: [''],
+      title: [''],
+      description: [''],
+      price: [''],
+      date: [''],
+      status: [''],
+
     });
   }
 

@@ -1,51 +1,47 @@
 
 
-  <div class="bg-dark mt-5 container rounded">
+  <div class="bg-dark mt-5 container rounded p-5">
     <div class="row">
-      <div class="display-6 text-center">
-        <h3 class="text-white mt-4">Crud de Fornecedor</h3>
+      <div class="display-6 text-center text-white">
+        <h3 class="text-white mb-4">Cadastro de anuncio</h3>
         <form [formGroup]="formGroupAnuncio">
 
           <div class="mb-3">
-            <label for="name" class="form-label">Nome</label>
-            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Digite seu nome">
+            <label for="title" class="form-label">Titulo</label>
+            <input type="text" formControlName="title" class="form-control" id="title" placeholder="Digite seu nome">
           </div>
 
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" formControlName="email" class="form-control" id="email" placeholder="Digite seu email">
+            <label for="descriptor" class="form-label">Descrição</label>
+            <input type="text" formControlName="descriptor" class="form-control" id="descriptor" placeholder="Digite a descrição">
           </div>
 
           <div class="mb-3">
-            <label for="location" class="form-label">Localização</label>
-            <select formControlName="location" class="form-select" id="location" aria-label="Default select example">
-              <option value="Sul">Sul</option>
-              <option value="Sudeste">Sudeste</option>
-            </select>
+            <label for="date" class="form-label">Data de validade</label>
+            <input type="text" formControlName="date" class="form-control" id="date" placeholder="Digite a data de validade">
+          </div>
+
+          <div class="mb-3">
+            <label for="price" class="form-label">Preço</label>
+            <input type="text" formControlName="price" class="form-control" id="price" placeholder="Digite o preço">
           </div>
 
 
-
-          <div class="form-check">
-            <input class="form-check-input" type="radio" formControlName="examination" value="Sim" id="flexRadioDefault1"  />
+          <div class="form-check text-start">
+            <input class="form-check-input justify-left" type="radio" formControlName="status" value="Ativo" id="flexRadioDefault1"  />
             <label class="form-check-label text-white" for="flexRadioDefault1">
-              Passou no exame sanitário
+              Ativo
             </label>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" formControlName="examination" value="Não" id="flexRadioDefault2"
+          <div class="form-check text-start">
+            <input class="form-check-input" type="radio" formControlName="status" value="Desativo" id="flexRadioDefault2"
               checked />
             <label class="form-check-label text-white" for="flexRadioDefault2">
-              Não passou no exame sanitário
+              Desativo
             </label>
           </div>
 
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" formControlName="commentary" id="flexCheckDefault" />
-            <label class="form-check-label text-white" for="flexCheckDefault">
-              Há bons feedbacks
-            </label>
-          </div>
+
           <div>
             <button class="btn btn-info m-3" (click)="save()">Salvar</button>
             <button class="btn btn-info" (click)="clean()">Limpar</button>
@@ -59,27 +55,27 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Email</th>
-          <th scope="col">Região</th>
-          <th scope="col">Exame Sanitário</th>
-          <th scope="col">Bons feedbacks</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Preço</th>
+          <th scope="col">Data de validade</th>
+          <th scope="col">Status</th>
           <th scope="col">Opções</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let supplier of Suppliers">
-          <th scope="row">{{supplier.id}}</th>
-          <td>{{supplier.name}}</td>
-          <td>{{supplier.email}}</td>
-          <td>{{supplier.location}}</td>
+        <tr *ngFor="let anuncio of Anuncios">
+          <th scope="row">{{anuncio.id}}</th>
+          <td>{{anuncio.title}}</td>
+          <td>{{anuncio.description}}</td>
+          <td>{{anuncio.price}}</td>
           <td>
-            {{ supplier.examination}}
+            {{ anuncio.date}}
           </td>
-          <td>{{supplier.commentary  | yesNo }}</td>
+          <td>{{anuncio.status  | yesNo }}</td>
           <td>
-            <button class="btn btn-warning me-2" (click)="edit(supplier)">Editar</button>
-            <button class="btn btn-danger"  (click)="delete(supplier)">Deletar</button>
+            <button class="btn btn-warning me-2" (click)="edit(anuncio)">Editar</button>
+            <button class="btn btn-danger"  (click)="delete(anuncio)">Deletar</button>
           </td>
         </tr>
       </tbody>

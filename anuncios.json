@@ -1,0 +1,28 @@
+{
+  "anuncios": [
+    {
+      "id": 1,
+      "title": "Tony",
+      "description": "tony@gmail.com",
+      "price": "4234234dsadsad",
+      "date": "dasdasdasd",
+      "status": "Sim"
+    },
+    {
+      "id": 2,
+      "title": "",
+      "description": "",
+      "price": "",
+      "date": "",
+      "status": "Desativo"
+    },
+    {
+      "id": 3,
+      "title": "asdad",
+      "description": null,
+      "price": "23423",
+      "date": "4234234",
+      "status": null
+    }
+  ]
+}
