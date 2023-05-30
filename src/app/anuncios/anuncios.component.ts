@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnunciosService } from '../anuncios.service';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Anuncio } from '../anuncios';
 @Component({
   selector: 'app-anuncios',
@@ -25,12 +25,12 @@ export class AnunciosComponent {
   ) {
     this.formGroupAnuncio = this.formBuilder.group({
       id: [''],
-      title: [''],
-      description: [''],
-      price: [''],
-      date: [''],
-      status: [''],
-      image: [''],
+      title: ['',Validators.required],
+      description: ['',Validators.required],
+      price: ['',Validators.required],
+      date: ['',Validators.required],
+      status: ['',Validators.required],
+      image: ['',Validators.required],
 
     });
   }
@@ -46,6 +46,9 @@ export class AnunciosComponent {
   }
 
   save() {
+
+    if(this.formGroupAnuncio.valid){
+
     if (this.isEditing) {
       this.anunciosService.edit(this.formGroupAnuncio.value).subscribe({
         next: () => {
@@ -62,9 +65,13 @@ export class AnunciosComponent {
         },
       });
     }
+
+
+  }
   }
 
   edit(anuncio: Anuncio) {
+
     this.formGroupAnuncio.setValue(anuncio);
     this.isEditing = true;
   }
