@@ -18,7 +18,7 @@
 
           <div class="mb-3">
             <label for="date" class="form-label">Data de validade</label>
-            <input type="text" formControlName="date" class="form-control" id="date" placeholder="Digite a data de validade">
+            <input type="date" formControlName="date" class="form-control" id="date" placeholder="Digite a data de validade">
           </div>
 
           <div class="mb-3">
@@ -78,7 +78,7 @@
           </td>
           <td>{{anuncio.status}}</td>
 
-          <td><img src='{{anuncio.image}}' alt="A IMAGEM"></td>
+          <td>{{anuncio.image  | slice:0:40 }}</td>
           <td>
             <button class="btn btn-warning me-2" (click)="edit(anuncio)">Editar</button>
             <button class="btn btn-danger"  (click)="delete(anuncio)">Deletar</button>
