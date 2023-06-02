@@ -16,6 +16,7 @@ import { Anuncio } from '../anuncios';
 export class AnunciosComponent {
   Anuncios: Anuncio[] = [];
   isEditing: boolean = false;
+  submitted: boolean = false;
   formGroupAnuncio: FormGroup;
   myDrop: any;
 
@@ -86,4 +87,30 @@ export class AnunciosComponent {
     this.formGroupAnuncio.reset();
     this.isEditing = false;
   }
+
+  get title(): any {
+    return this.formGroupAnuncio.get('title');
+  }
+
+  get price(): any {
+    return this.formGroupAnuncio.get('price');
+  }
+
+  get description(): any {
+    return this.formGroupAnuncio.get('description');
+  }
+
+
+  get date(): any {
+    return this.formGroupAnuncio.get('date');
+  }
+
+  get status(): any {
+    return this.formGroupAnuncio.get('status');
+  }
+
+  get image(): any {
+    return this.formGroupAnuncio.get('image');
+  }
 }
+
