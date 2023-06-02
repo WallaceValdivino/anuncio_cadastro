@@ -9,7 +9,7 @@
           <div class="mb-3">
             <label for="title" class="form-label">Titulo</label>
             <input type="text" formControlName="title" class="form-control" id="title" placeholder="Digite o titulo">
-            <div *ngIf="title.invalid">
+            <div *ngIf="submitted && title.invalid">
               <small class="text-danger">TITULO INVALIDO!</small>
             </div>
 
@@ -18,7 +18,7 @@
           <div class="mb-3">
             <label for="description" class="form-label">Descrição</label>
             <input type="text" formControlName="description" class="form-control" id="description" placeholder="Digite a descrição">
-            <div *ngIf="description.invalid">
+            <div *ngIf="submitted && description.invalid">
               <small class="text-danger">DESCRIÇÃO INVALIDA!</small>
             </div>
           </div>
@@ -26,7 +26,7 @@
           <div class="mb-3">
             <label for="date" class="form-label">Data de validade</label>
             <input type="date" formControlName="date" class="form-control" id="date" placeholder="Digite a data de validade">
-            <div *ngIf="date.invalid">
+            <div *ngIf="submitted && date.invalid">
               <small class="text-danger">DATA INVALIDA!</small>
             </div>
           </div>
@@ -34,7 +34,7 @@
           <div class="mb-3">
             <label for="price" class="form-label">Preço</label>
             <input type="text" formControlName="price" class="form-control" id="price" placeholder="Digite o preço">
-            <div *ngIf="price.invalid">
+            <div *ngIf="submitted && price.invalid">
               <small class="text-danger">PREÇO INVALIDO!</small>
             </div>
           </div>
@@ -52,14 +52,14 @@
             <label class="form-check-label text-white" for="flexRadioDefault2">
               Desativo
             </label>
-            <div *ngIf="status.invalid">
+            <div *ngIf="submitted && status.invalid">
               <small class="text-danger">STATUS INVALIDO!</small>
             </div>
           </div>
           <div class="mb-3">
             <label for="image" class="form-label">Imagem</label>
             <input type="text" formControlName="image" class="form-control" id="image" placeholder="Digite o url da imagem">
-            <div *ngIf="image.invalid">
+            <div *ngIf="submitted && image.invalid">
               <small class="text-danger">IMAGEM INVALIDA!</small>
             </div>
           </div>

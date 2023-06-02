@@ -47,8 +47,9 @@ export class AnunciosComponent {
   }
 
   save() {
-
-    if(this.formGroupAnuncio.valid){
+    this.submitted = true;
+    if(this.formGroupAnuncio.valid)
+    {
 
     if (this.isEditing) {
       this.anunciosService.edit(this.formGroupAnuncio.value).subscribe({
@@ -67,7 +68,7 @@ export class AnunciosComponent {
       });
     }
 
-
+    this.submitted = false;
   }
   }
 
@@ -86,6 +87,7 @@ export class AnunciosComponent {
   clean() {
     this.formGroupAnuncio.reset();
     this.isEditing = false;
+    this.submitted = false;
   }
 
   get title(): any {
